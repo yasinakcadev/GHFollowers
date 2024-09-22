@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9301E2922CA0377200A9FBBD /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9301E2912CA0377200A9FBBD /* GFButton.swift */; };
+		9301E2942CA03BBE00A9FBBD /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9301E2932CA03BBE00A9FBBD /* GFTextField.swift */; };
 		9330A2AA2CA00BDA002D8864 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330A2A92CA00BDA002D8864 /* AppDelegate.swift */; };
 		9330A2AC2CA00BDA002D8864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330A2AB2CA00BDA002D8864 /* SceneDelegate.swift */; };
 		9330A2B32CA00BDC002D8864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9330A2B22CA00BDC002D8864 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9301E2912CA0377200A9FBBD /* GFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFButton.swift; sourceTree = "<group>"; };
+		9301E2932CA03BBE00A9FBBD /* GFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTextField.swift; sourceTree = "<group>"; };
 		9330A2A62CA00BDA002D8864 /* GHFollowers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GHFollowers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9330A2A92CA00BDA002D8864 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9330A2AB2CA00BDA002D8864 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				9330A2B72CA00BDC002D8864 /* Info.plist */,
 				937684822CA029C9005BFF02 /* SearchVC.swift */,
 				937684842CA029D1005BFF02 /* FavoritesListVC.swift */,
+				9301E2912CA0377200A9FBBD /* GFButton.swift */,
+				9301E2932CA03BBE00A9FBBD /* GFTextField.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9301E2942CA03BBE00A9FBBD /* GFTextField.swift in Sources */,
 				937684832CA029C9005BFF02 /* SearchVC.swift in Sources */,
+				9301E2922CA0377200A9FBBD /* GFButton.swift in Sources */,
 				937684852CA029D1005BFF02 /* FavoritesListVC.swift in Sources */,
 				9330A2AA2CA00BDA002D8864 /* AppDelegate.swift in Sources */,
 				9330A2AC2CA00BDA002D8864 /* SceneDelegate.swift in Sources */,
