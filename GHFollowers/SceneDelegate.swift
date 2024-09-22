@@ -19,8 +19,51 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        window?.rootViewController = createTabbarController(
+            viewControllers: [
+                createNavigationController(title: "Search", vc: SearchVC(), item: .search, tag: 0),
+                createNavigationController(title: "Favorites", vc: FavoritesListVC(), item: .favorites, tag: 1)
+            ]
+        )
         window?.makeKeyAndVisible()
+    }
+    
+    func createNavigationController(title: String, vc: UIViewController, item: UITabBarItem.SystemItem, tag: Int) -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: vc)
+        navigationController.title = title
+        navigationController.navigationBar.tintColor = .systemGreen
+        navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: item, tag: tag)
+        navigationController.navigationBar.standardAppearance = createNavigationBarAppeareance()
+        navigationController.navigationBar.scrollEdgeAppearance = createNavigationBarAppeareance()
+        return navigationController
+    }
+    
+    func createTabbarController(viewControllers: [UIViewController]) -> UITabBarController {
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = viewControllers
+        tabbarController.tabBar.standardAppearance = createTabbarAppearance()
+        tabbarController.tabBar.scrollEdgeAppearance = createTabbarAppearance()
+        return tabbarController
+    }
+    
+    func createNavigationBarAppeareance() -> UINavigationBarAppearance {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemGreen
+        appearance.backButtonAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        return appearance
+    }
+    
+    func createTabbarAppearance() -> UITabBarAppearance {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemGreen
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.stackedLayoutAppearance.normal.iconColor = UIColor.lightGray
+        appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        return appearance
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
