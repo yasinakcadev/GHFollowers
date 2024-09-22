@@ -1,0 +1,88 @@
+:# Xcode
+DerivedData/
+.idea/
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xcworkspace
+!default.xcworkspace
+
+# Swift Package Manager
+Packages
+*.xcodeproj/*
+.build/
+swiftpm/
+.sourcepackage/
+
+# CocoaPods
+Pods/
+Podfile.lock
+# Uncomment this line if you are using Carthage
+# Carthage/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+*.ipa
+*.apk
+
+# Code Coverage
+*.xccoverage
+*.profdata
+
+# App Icon and Provisioning Profiles
+*.xcassets/AppIcon.appiconset/Icon*.png
+*.xcassets/AppIcon.appiconset/*
+
+# Dependency managers
+Carthage/
+Carthage/Checkouts
+Carthage/Build
+Sourcery/
+
+# Build artifacts
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Test results
+test-results/
+*.result
+
+# Temporary files
+*.swp
+*.lock
+*.DS_Store
+*.swm
+*.swo
+*.tmp
+*.crt
+*.pem
+*.key
+*.orig
+*.rej
+*~ 
+
+# SwiftPM
+.build/
+.swiftpm/
+
+# Mac files
+*.DS_Store
+
+# Simulator generated files
+*.simps
+
+# Logs
+*.log
+
+# Archives
+*.xcarchive
+
+# Other
+*.moved-aside
+*.pbxuser
+*.perspectivev3
+
