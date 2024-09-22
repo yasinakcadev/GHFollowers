@@ -58,9 +58,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func createTabbarAppearance() -> UITabBarAppearance {
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .systemGreen
-        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.white
-        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        appearance.backgroundColor = .systemBackground
+        appearance.stackedLayoutAppearance.selected.iconColor = UIColor.systemGreen
+        appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemGreen]
         appearance.stackedLayoutAppearance.normal.iconColor = UIColor.lightGray
         appearance.stackedLayoutAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.gray]
         return appearance
