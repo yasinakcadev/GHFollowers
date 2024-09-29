@@ -36,5 +36,22 @@ final class GFTextField: UITextField {
         autocorrectionType = .no
         
         placeholder = "Enter a username"
+        returnKeyType = .go
+        inputAccessoryView = createToolbarView()
+    }
+    
+    private func createToolbarView() -> UIView {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "DONE", style: .done, target: self, action: #selector(hideKeyboard))
+        let flexSpace = UIBarButtonItem(systemItem: .flexibleSpace)
+        
+        toolbar.items = [flexSpace, doneButton]
+        return toolbar
+    }
+    
+    @objc func hideKeyboard() {
+        endEditing(true)
     }
 }
