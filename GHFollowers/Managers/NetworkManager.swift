@@ -7,6 +7,12 @@
 
 import Foundation
 
+enum GFError: Error {
+    case invalidUrl
+    case serverError
+    case decodeError
+}
+
 final class NetworkManager {
     
     static let shared = NetworkManager()
@@ -14,22 +20,22 @@ final class NetworkManager {
     
     private init() {}
     
-    func getFollowers(for username: String, page: Int, completion: @escaping ([Followers]?, String?) -> Void) {
+    func getFollowers(for username: String, page: Int, completion: @escaping (Result<[Followers], GFError>) -> Void) {
         let endpoint = baseUrl + "\(username)/followers?per_page=10&page=\(page)"
         
         guard let url = URL(string: endpoint) else {
-            completion(nil, "Invalid url")
+            completion(.failure(.invalidUrl))
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                completion(nil, error.localizedDescription)
+                completion(.failure(.serverError))
                 return
             }
             
             guard let data = data else {
-                completion(nil, "Server error")
+                completion(.failure(.serverError))
                 return
             }
             
@@ -37,9 +43,9 @@ final class NetworkManager {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let results = try decoder.decode([Followers].self, from: data)
-                completion(results, nil)
+                completion(.success(results))
             } catch {
-                completion(nil, "Decode error")
+                completion(.failure(.serverError))
             }
         }
         task.resume()
