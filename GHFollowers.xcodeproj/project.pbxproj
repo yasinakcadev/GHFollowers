@@ -23,6 +23,7 @@
 		937684852CA029D1005BFF02 /* FavoritesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937684842CA029D1005BFF02 /* FavoritesListVC.swift */; };
 		93A94A872CAF2CF400CD2250 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93A94A862CAF2CF400CD2250 /* NetworkManager.swift */; };
 		93DF2E602CA09D6C00032254 /* FollowerListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DF2E5F2CA09D6C00032254 /* FollowerListVC.swift */; };
+		93EC0A572CBAC35200A80C01 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EC0A562CBAC35200A80C01 /* UIHelper.swift */; };
 		93FE5C862CAEC4E8007229EE /* Followers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE5C852CAEC4E8007229EE /* Followers.swift */; };
 		93FE5C882CAEC63E007229EE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93FE5C872CAEC63E007229EE /* User.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +47,7 @@
 		937684842CA029D1005BFF02 /* FavoritesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListVC.swift; sourceTree = "<group>"; };
 		93A94A862CAF2CF400CD2250 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93DF2E5F2CA09D6C00032254 /* FollowerListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListVC.swift; sourceTree = "<group>"; };
+		93EC0A562CBAC35200A80C01 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		93FE5C852CAEC4E8007229EE /* Followers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Followers.swift; sourceTree = "<group>"; };
 		93FE5C872CAEC63E007229EE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				93279C4C2CADEF330003C43F /* UIViewController+Extension.swift */,
+				93EC0A562CBAC35200A80C01 /* UIHelper.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				93279C492CADE1940003C43F /* GFBodyLabel.swift in Sources */,
 				93DF2E602CA09D6C00032254 /* FollowerListVC.swift in Sources */,
 				93A94A872CAF2CF400CD2250 /* NetworkManager.swift in Sources */,
+				93EC0A572CBAC35200A80C01 /* UIHelper.swift in Sources */,
 				9349F1902CB5962E00CC1F35 /* GFAvatarImageView.swift in Sources */,
 				9330A2AA2CA00BDA002D8864 /* AppDelegate.swift in Sources */,
 				93279C472CADDF620003C43F /* GFTitleLabel.swift in Sources */,
