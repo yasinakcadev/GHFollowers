@@ -5,7 +5,7 @@
 //  Created by Yasin AKÇA (Mobil Uygulamalar Uygulama Geliştirme Müdürlüğü) on 3.10.2024.
 //
 
-import Foundation
+import UIKit
 
 enum GFError: Error {
     case invalidUrl
@@ -16,7 +16,8 @@ enum GFError: Error {
 final class NetworkManager {
     
     static let shared = NetworkManager()
-    let baseUrl = "https://api.github.com/users/"
+    private let baseUrl = "https://api.github.com/users/"
+    let cache = NSCache<NSString, UIImage>()
     
     private init() {}
     
