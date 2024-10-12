@@ -41,11 +41,7 @@ final class SearchVC: UIViewController {
             showAlertOnMainThread(alertTitle: "Ops!", message: "Username is required. We need to know who to look for.", buttonTitle: "OKAY")
             return
         }
-        let vc = FollowerListVC()
-        vc.userName = usernameTextField.text
-        vc.title = usernameTextField.text
-        
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(FollowerListVC(username: usernameTextField.text ?? ""), animated: true)
     }
     
     func configureLogoImageView() {
