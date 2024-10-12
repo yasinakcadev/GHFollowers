@@ -16,7 +16,9 @@ final class FollowerListVC: UIViewController {
     var userName: String
     var collectionView: UICollectionView?
     var dataSource: UICollectionViewDiffableDataSource<Section, Follower>?
-    var followers: [Follower]?
+    var followers: [Follower] = []
+    var page = 1
+    var hasMoreFollowers: Bool = true
     
     init(username: String) {
         self.userName = username
@@ -34,7 +36,7 @@ final class FollowerListVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        getFollowers()
+        getFollowers(username: self.userName, page: self.page)
         configureCollectionView()
         configureDataSource()
     }
@@ -44,12 +46,13 @@ final class FollowerListVC: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    func getFollowers() {
-        NetworkManager.shared.getFollowers(for: userName, page: 1) { [weak self] result in
+    func getFollowers(username: String, page: Int) {
+        NetworkManager.shared.getFollowers(username: username, page: page) { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success(let followers):
-                self.followers = followers
+                if followers.count < 100 { self.hasMoreFollowers = false }
+                self.followers.append(contentsOf: followers)
                 self.applySnapshot()
             case .failure(let error):
                 self.showAlertOnMainThread(alertTitle: "Ops!", message: error.localizedDescription, buttonTitle: "OKAY")
@@ -61,7 +64,8 @@ final class FollowerListVC: UIViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         guard let collectionView = collectionView else { return }
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .systemBackground 
+        collectionView.delegate = self
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCell.self, forCellWithReuseIdentifier: FollowerCell.identifier)
     }
     
@@ -75,12 +79,26 @@ final class FollowerListVC: UIViewController {
     }
     
     func applySnapshot() {
-        guard let followers = self.followers else { return }
         var snapshot = NSDiffableDataSourceSnapshot<Section, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
         DispatchQueue.main.async { [weak self] in
             self?.dataSource?.apply(snapshot, animatingDifferences: true)
+        }
+    }
+}
+
+extension FollowerListVC: UICollectionViewDelegate {
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y            // ScrollView'ın dikeyde nerde oldugunu temsil eder
+        let contentHeight = scrollView.contentSize.height   // ScrollView içindeki içerigin toplam yuksekligini temsil eder. ScrollView'in kaydirilabilir alanının yüksekligidir.
+        let height = scrollView.frame.size.height           // ScrollView'in gorunen alanının yuksekligidir. Yani kullanıcının ekran gordugu alanın boyutunu temsil eder.
+        
+        if offsetY > contentHeight - height {
+            guard hasMoreFollowers else { return }
+            self.page += 1
+            getFollowers(username: userName, page: page)
         }
     }
 }
