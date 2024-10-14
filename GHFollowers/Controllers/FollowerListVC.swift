@@ -52,8 +52,14 @@ final class FollowerListVC: UIViewController {
             guard let self = self else { return }
             self.dismissLoadingView()
             switch result {
-            case .success(let followers):
+            case .success(var followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
+                if followers.isEmpty {
+                    DispatchQueue.main.async {
+                        self.showEmptyStateView(with: "The user has no follower. Go follow them 😃", in: self.view)
+                    }
+                    return
+                }
                 self.followers.append(contentsOf: followers)
                 self.applySnapshot()
             case .failure(let error):
