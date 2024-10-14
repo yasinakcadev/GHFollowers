@@ -36,8 +36,8 @@ final class FollowerListVC: UIViewController {
         view.backgroundColor = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        getFollowers(username: self.userName, page: self.page)
         configureCollectionView()
+        getFollowers(username: self.userName, page: self.page)
         configureDataSource()
     }
     
@@ -47,8 +47,10 @@ final class FollowerListVC: UIViewController {
     }
     
     func getFollowers(username: String, page: Int) {
+        showLoadingIndicator()
         NetworkManager.shared.getFollowers(username: username, page: page) { [weak self] result in
             guard let self = self else { return }
+            self.dismissLoadingView()
             switch result {
             case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
