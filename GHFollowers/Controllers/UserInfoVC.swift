@@ -16,6 +16,7 @@ final class UserInfoVC: UIViewController {
 
         view.backgroundColor = .systemBackground
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "DONE", style: .done, target: self, action: #selector(dismissModal))
+        getUser()
     }
     
     init(username: String) {
@@ -29,5 +30,17 @@ final class UserInfoVC: UIViewController {
     
     @objc func dismissModal() {
         dismiss(animated: true)
+    }
+    
+    func getUser() {
+        NetworkManager.shared.getUser(username: self.username) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case .success(let user):
+                break
+            case .failure(let error):
+                break
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@
 		9301E2922CA0377200A9FBBD /* GFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9301E2912CA0377200A9FBBD /* GFButton.swift */; };
 		9301E2942CA03BBE00A9FBBD /* GFTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9301E2932CA03BBE00A9FBBD /* GFTextField.swift */; };
 		930992332CC039F30070AE2D /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 930992322CC039F30070AE2D /* UserInfoVC.swift */; };
+		930992362CC040700070AE2D /* netfox in Frameworks */ = {isa = PBXBuildFile; productRef = 930992352CC040700070AE2D /* netfox */; };
 		93279C472CADDF620003C43F /* GFTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93279C462CADDF620003C43F /* GFTitleLabel.swift */; };
 		93279C492CADE1940003C43F /* GFBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93279C482CADE1940003C43F /* GFBodyLabel.swift */; };
 		93279C4B2CADE5CD0003C43F /* GFAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93279C4A2CADE5CD0003C43F /* GFAlertVC.swift */; };
@@ -61,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930992362CC040700070AE2D /* netfox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,9 +88,9 @@
 		9330A2A82CA00BDA002D8864 /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
-				93A94A852CAF2CED00CD2250 /* Managers */,
 				9330A2B72CA00BDC002D8864 /* Info.plist */,
 				93FE5C842CAEC4E2007229EE /* Models */,
+				93A94A852CAF2CED00CD2250 /* Managers */,
 				93FE5C832CAEBF2D007229EE /* Others */,
 				93FE5C822CAEBE5F007229EE /* Extensions */,
 				93FE5C812CAEBE3D007229EE /* Views */,
@@ -184,6 +186,9 @@
 			dependencies = (
 			);
 			name = GHFollowers;
+			packageProductDependencies = (
+				930992352CC040700070AE2D /* netfox */,
+			);
 			productName = GHFollowers;
 			productReference = 9330A2A62CA00BDA002D8864 /* GHFollowers.app */;
 			productType = "com.apple.product-type.application";
@@ -212,6 +217,9 @@
 				Base,
 			);
 			mainGroup = 9330A29D2CA00BDA002D8864;
+			packageReferences = (
+				930992342CC040700070AE2D /* XCRemoteSwiftPackageReference "netfox" */,
+			);
 			productRefGroup = 9330A2A72CA00BDA002D8864 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -469,6 +477,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		930992342CC040700070AE2D /* XCRemoteSwiftPackageReference "netfox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kasketis/netfox";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.21.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		930992352CC040700070AE2D /* netfox */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 930992342CC040700070AE2D /* XCRemoteSwiftPackageReference "netfox" */;
+			productName = netfox;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9330A29E2CA00BDA002D8864 /* Project object */;
 }
