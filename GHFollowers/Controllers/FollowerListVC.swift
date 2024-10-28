@@ -55,7 +55,7 @@ final class FollowerListVC: UIViewController {
             guard let self = self else { return }
             self.dismissLoadingView()
             switch result {
-            case .success(var followers):
+            case .success(let followers):
                 if followers.count < 100 { self.hasMoreFollowers = false }
                 if followers.isEmpty {
                     DispatchQueue.main.async {
