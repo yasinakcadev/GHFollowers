@@ -21,6 +21,8 @@
 		9330A2AC2CA00BDA002D8864 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9330A2AB2CA00BDA002D8864 /* SceneDelegate.swift */; };
 		9330A2B32CA00BDC002D8864 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9330A2B22CA00BDC002D8864 /* Assets.xcassets */; };
 		9330A2B62CA00BDC002D8864 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9330A2B42CA00BDC002D8864 /* LaunchScreen.storyboard */; };
+		933E0C352CD0C5E400451839 /* GFRepoItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E0C342CD0C5E400451839 /* GFRepoItemVC.swift */; };
+		933E0C372CD0C7C700451839 /* GFFollowerItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933E0C362CD0C7C700451839 /* GFFollowerItemVC.swift */; };
 		9349F18E2CB595E900CC1F35 /* FollowerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349F18D2CB595E900CC1F35 /* FollowerCell.swift */; };
 		9349F1902CB5962E00CC1F35 /* GFAvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9349F18F2CB5962E00CC1F35 /* GFAvatarImageView.swift */; };
 		9360B17F2CBDABBB00CB7C0B /* GFEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9360B17E2CBDABBB00CB7C0B /* GFEmptyStateView.swift */; };
@@ -51,6 +53,8 @@
 		9330A2B22CA00BDC002D8864 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9330A2B52CA00BDC002D8864 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9330A2B72CA00BDC002D8864 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		933E0C342CD0C5E400451839 /* GFRepoItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFRepoItemVC.swift; sourceTree = "<group>"; };
+		933E0C362CD0C7C700451839 /* GFFollowerItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFFollowerItemVC.swift; sourceTree = "<group>"; };
 		9349F18D2CB595E900CC1F35 /* FollowerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCell.swift; sourceTree = "<group>"; };
 		9349F18F2CB5962E00CC1F35 /* GFAvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAvatarImageView.swift; sourceTree = "<group>"; };
 		9360B17E2CBDABBB00CB7C0B /* GFEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFEmptyStateView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,16 @@
 			path = GHFollowers;
 			sourceTree = "<group>";
 		};
+		933E0C382CD0C88000451839 /* ItemInfoVCs */ = {
+			isa = PBXGroup;
+			children = (
+				9328B0BB2CD0162D00E3D0C5 /* GFItemInfoVC.swift */,
+				933E0C342CD0C5E400451839 /* GFRepoItemVC.swift */,
+				933E0C362CD0C7C700451839 /* GFFollowerItemVC.swift */,
+			);
+			path = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
 		9349F1802CB58D1100CC1F35 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +153,7 @@
 		93FE5C812CAEBE3D007229EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				933E0C382CD0C88000451839 /* ItemInfoVCs */,
 				9349F1802CB58D1100CC1F35 /* Cells */,
 				93279C4A2CADE5CD0003C43F /* GFAlertVC.swift */,
 				9301E2912CA0377200A9FBBD /* GFButton.swift */,
@@ -148,7 +163,6 @@
 				9360B17E2CBDABBB00CB7C0B /* GFEmptyStateView.swift */,
 				93808B022CCD8883001C821A /* GFSecondaryLabel.swift */,
 				93808B002CCD87FB001C821A /* GFUserInfoHeaderVC.swift */,
-				9328B0BB2CD0162D00E3D0C5 /* GFItemInfoVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933E0C352CD0C5E400451839 /* GFRepoItemVC.swift in Sources */,
 				9328B0BA2CD00D4F00E3D0C5 /* GFItemInfoView.swift in Sources */,
 				93FE5C882CAEC63E007229EE /* User.swift in Sources */,
 				9301E2942CA03BBE00A9FBBD /* GFTextField.swift in Sources */,
@@ -276,6 +291,7 @@
 				930992332CC039F30070AE2D /* UserInfoVC.swift in Sources */,
 				9328B0BC2CD0162D00E3D0C5 /* GFItemInfoVC.swift in Sources */,
 				93EC0A572CBAC35200A80C01 /* UIHelper.swift in Sources */,
+				933E0C372CD0C7C700451839 /* GFFollowerItemVC.swift in Sources */,
 				9349F1902CB5962E00CC1F35 /* GFAvatarImageView.swift in Sources */,
 				93808B032CCD8883001C821A /* GFSecondaryLabel.swift in Sources */,
 				9330A2AA2CA00BDA002D8864 /* AppDelegate.swift in Sources */,

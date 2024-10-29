@@ -51,7 +51,8 @@ final class GFItemInfoView: UIView {
             
             countLabel.topAnchor.constraint(equalTo: symbolImageView.bottomAnchor, constant: 4),
             countLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            countLabel.trailingAnchor.constraint(equalTo: trailingAnchor)
+            countLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            countLabel.heightAnchor.constraint(equalToConstant: 18)
         ])
     }
     
@@ -64,8 +65,8 @@ final class GFItemInfoView: UIView {
             symbolImageView.image = UIImage(systemName: "text.alignleft")
             titleLabel.text = "Public Gists"
         case .followers:
-            symbolImageView.image = UIImage(systemName: "text.heart")
-            titleLabel.text = "Followera"
+            symbolImageView.image = UIImage(systemName: "heart")
+            titleLabel.text = "Followers"
         case .following:
             symbolImageView.image = UIImage(systemName: "person.2")
             titleLabel.text = "Following"
